@@ -28,6 +28,8 @@ services:
       - ./proxy_nginx.conf:/etc/nginx/nginx.conf
     environment:
       NGINX_ENTRYPOINT_QUIET_LOGS: 1
+    depends_on:
+      - nginx
 
   nginx:
     restart: unless-stopped
